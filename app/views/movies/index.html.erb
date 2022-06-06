@@ -1,0 +1,13 @@
+<h1 class="headings text-center mt-4">Movies Listing</h1>
+
+<div class="container">
+  <% @movies.each do |movie| %>
+    <div class="card w-50">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to movie.title, movie_path(movie), class: "text-info" %></h5>
+          <%# <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> %>
+          <%= link_to "Show", movie_path(movie), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
