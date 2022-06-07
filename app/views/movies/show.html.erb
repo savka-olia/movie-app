@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
+  <div class="card text-center my-4" style="width: 18rem;">
+    <div class="card-body text-light">
         <h2 class="text-center mt-4"><%= @movie.title %></h2>
         <p class="card-text"><%= @movie.description %></p>
         <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-outline-info" %>
@@ -8,3 +8,4 @@
     </div>
   </div>
 </div>
+
