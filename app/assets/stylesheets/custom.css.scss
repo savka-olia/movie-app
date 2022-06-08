@@ -80,14 +80,14 @@ footer .form-control {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Gruppo', cursive;
-  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   font-weight: 500;
   height: 50px;
   width: 135px;
   line-height: 20px;
   list-style: none;
-  margin: 0;
+  margin: 5px;
   outline: none;
   padding: 10px 16px;
   position: relative;
@@ -176,3 +176,47 @@ footer .form-control {
 }
 
 //pagination
+
+
+//user edit button
+
+.edit-btn{
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin-right: 10px;
+  line-height: 31px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+}
+
+.edit-btn:hover {
+  background-color: #f7fafa;
+  text-decoration: none;
+}
+
+.edit-btn:focus {
+  background-color: #f7fafa;
+  color: #141e30;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.edit_user i,
+em{
+  color: #f8f9fa;
+}
