@@ -18,9 +18,11 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <%= link_to "View Movies List", movies_path, class: "dropdown-item" %>
-          <div class="dropdown-divider"></div>
-          <%= link_to "Create new Movie", new_movie_path, class: "dropdown-item" %>
-        </div>
+          <% if current_user && current_user.admin? %>
+            <div class="dropdown-divider"></div>
+              <%= link_to "Create new Movie", new_movie_path, class: "dropdown-item" %>
+            </div>
+          <% end %>
       </li>
       <% if current_user %>
       <li class="nav-item dropdown">

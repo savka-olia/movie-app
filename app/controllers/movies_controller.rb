@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_admin, except: [:show, :index]
 
   def index
     @movies = Movie.all
@@ -14,6 +15,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
+    @movie.user = current_user
     if @movie.save
       flash[:notice] = "Movie was created successfully."
       redirect_to @movie
@@ -47,6 +49,12 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:title, :description)
+  end
+
+  def ensure_admin
+    unless current_user.admin?
+      redirect_to(movies_path, alert: "You can't perfom this action")
+    end
   end
 
 end

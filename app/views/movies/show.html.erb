@@ -3,9 +3,12 @@
     <div class="card-body text-light">
         <h2 class="text-center mt-4"><%= @movie.title %></h2>
         <p class="card-text"><%= @movie.description %></p>
-        <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-outline-info" %>
-        <%= link_to "Delete", movie_path(@movie), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+        <% if current_user && current_user.admin %>
+          <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-outline-info" %>
+          <%= link_to "Delete", movie_path(@movie), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
     </div>
   </div>
 </div>
 
+<%# add back to movies list page %>
