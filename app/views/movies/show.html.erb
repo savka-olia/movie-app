@@ -1,14 +1,30 @@
-<div class="container">
-  <div class="card text-center my-4" style="width: 18rem;">
-    <div class="card-body text-light">
-        <h2 class="text-center mt-4"><%= @movie.title %></h2>
-        <p class="card-text"><%= @movie.description %></p>
-        <% if current_user && current_user.admin %>
-          <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-outline-info" %>
-          <%= link_to "Delete", movie_path(@movie), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %>
-        <% end %>
+<%# add back to movies list page %>
+<div class="card_1">
+  <div class="card_left">
+     <%= image_tag(@movie.image) %>
+  </div>
+  <div class="card_right">
+    <h2><%= @movie.title %></h2>
+    <div class="card_right_details">
+      <ul>
+        <li>
+          2003
+        </li>
+        <li>
+          Action
+        </li>
+      </ul>
+    </div>
+    <div class="card_right_review">
+      <p><%= @movie.description %></p>
+    </div>
+    <div class="card_right_button">
+      <% if current_user && current_user.admin %>
+        <%= link_to "Edit", edit_movie_path(@movie) %>
+        <%= link_to "Delete", movie_path(@movie), method: :delete, data: {confirm: "Are you sure?"} %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<%# add back to movies list page %>
+

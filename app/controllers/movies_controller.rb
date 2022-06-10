@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    @movie.user = current_user
+    # @movie.user = current_user
     if @movie.save
       flash[:notice] = "Movie was created successfully."
       redirect_to @movie
@@ -48,7 +48,7 @@ class MoviesController < ApplicationController
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :description)
+    params.require(:movie).permit(:title, :description, :image)
   end
 
   def ensure_admin

@@ -6,15 +6,19 @@
         <%= f.text_field :title, placeholder: "Title" %>
       </div>
       <div class="user-box">
-        <%= f.text_area :description, rows: 10, placeholder: "Description of movie" %>
+        <%= f.text_area :description, rows: 9, placeholder: "Description of movie" %>
+      </div>
+      <div class="user-box form-group">
+        <% if @movie.image.attached? %>
+          <%= image_tag @movie.image, style:"width: 75px; display: block" %>
+        <% end %>
+        <%= f.file_field :image, class:"form-control" %>
       </div>
       <div>
-        <%= f.submit class: "form_btn" %>
+        <%= f.submit class: "form_btn" %> <br />
+        <%= link_to '[ Cancel and return to movies listing ]', movies_path, class: "text-info" %>
       </div>
     <% end %>
   </div>
-    <div class="mb-3 text-center">
-      <%= link_to '[ Cancel and return to movies listing ]', movies_path, class: "text-info" %>
-    </div>
   </div>
 </div> 
