@@ -2,8 +2,10 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 .card_1 {
-  width:800px;
-  height:400px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  max-width:800px;
+  max-height:400px;
   background:transparent;
   position:absolute;
   left:0;
@@ -18,22 +20,17 @@
 }
 
 .card_left {
-    width:40%;
-    height:400px;
-    float:left;
-    overflow:hidden;
-    background:transparent;
+  overflow:hidden;
+  background:transparent;
 }
 
 .card_left img {
-  width:100%;
-  height:auto;
-  position:relative;
+  max-width: 320px;
+  max-height: 470px;
+  background-size: cover;
 }
 
 .card_right {
-  width:60%;
-  float:left;
   background:#0a101d;
   height:400px;
 }

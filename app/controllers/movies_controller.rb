@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   before_action :ensure_admin, except: [:show, :index]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.paginate(page: params[:page], per_page: 4)
   end
 
   def show
