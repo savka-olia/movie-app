@@ -1,20 +1,30 @@
 <h1 class="headings text-center mt-4 py-2">Movies</h1>
-<div class="container">
-  <% @movies.each do |movie| %>
-    <div class="cards">
-      <div class="index_img">
-         <%= image_tag(movie.image) %>
-      </div>
-      <div class="index_text">
-          <h4><%= movie.title %></h4>
-          <hr />
-          <div class="index_btn">
-            <%= link_to "Show", movie_path(movie), class: "form_btn" %>
-          </div>
-      </div>
+<% @movies.each do |movie| %> 
+  <div class="blog-card">
+    <div class="meta">
+      <div class="photo"><%= image_tag(movie.image) %></div>
+      <ul class="details">
+        <li class="date">Aug. 24, 2015</li>
+        <li class="tags">
+          <ul>
+            <li><a href="#">Learn</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  <% end %>
-  <div class="flickr_pagination">
-    <%= will_paginate @movies, :container => false %>
+    <div class="description">
+      <h2><%= movie.title %></h2>
+      <h3>Opening a door to the future</h3>
+      <p><%= movie.description %></p>
+      <p class="read-more">
+        <%= link_to "Read more", movie_path(movie) %>
+      </p>
+    </div>
   </div>
+<% end %>
+<div class="flickr_pagination">
+  <%= will_paginate @movies, :container => false %>
 </div>

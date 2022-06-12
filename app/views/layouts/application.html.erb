@@ -12,9 +12,12 @@
 
   <body>
     <div id="page-content">
-      <%= render 'layouts/navigation' %>
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+      <main>
+        <%= render 'layouts/navigation' %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </main>  
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

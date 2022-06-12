@@ -1,5 +1,4 @@
 @import 'bootstrap/dist/css/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Leckerli+One&family=Squada+One&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
 
 .w-50{
@@ -13,13 +12,19 @@ body {
 }
 
 .headings{
-  font-family: 'Squada One', cursive;
+  font-family: 'Montserrat', sans-serif;
   color: rgb(219, 219, 219);
 }
 
 
-body {
+#page-content{
   background: linear-gradient(#141e30, #243b55);
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  // background: linear-gradient(to right, #485563, #29323c); 
+  // background: linear-gradient(to right, #232526, #414345);  
+
 }
 
 //navbar
@@ -33,41 +38,6 @@ body {
 
 .navbar a{
   color:rgb(219, 219, 219);
-}
-
-// footer position and size
-
-.footer {
-  bottom: 0;
-  width: 100%;  
-  height: 300px;
-}
-
-
-footer {
-  padding-top: 30px;
-  background-color: rgba(0,0,0,.5);
-  color: #bbb;
-}
-
-footer a {
-  color: #999;
-  text-decoration:none;
-}
-
-footer a:hover, footer a:focus {
-  color: #aaa;
-  text-decoration:none;
-  border-bottom:1px dotted #999;
-}
-
-footer .form-control {
-    background-color: #1f2022;
-    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-    border: none;
-    resize: none;
-    color: #d1d2d2;
-    padding: 0.7em 1em;
 }
 
 //form 
@@ -179,6 +149,7 @@ footer .form-control {
 
 //pagination
 .flickr_pagination {
+  margin: 20px;
   text-align: center;
   padding: 0.3em;
   cursor: default; }
@@ -250,4 +221,11 @@ footer .form-control {
 .edit_user i,
 em{
   color: #f8f9fa;
+}
+
+// footer position and size
+footer{
+  height: 80px;
+  background:#0a101d;
+  margin-top: auto;
 }

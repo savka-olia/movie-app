@@ -20,6 +20,7 @@
         <p><%= @movie.description %></p>
       </div>
       <div class="card_right_button">
+        <%= link_to "Go back", movies_path %>
         <% if current_user && current_user.admin %>
           <%= link_to "Edit", edit_movie_path(@movie) %>
           <%= link_to "Delete", movie_path(@movie), method: :delete, data: {confirm: "Are you sure?"} %>

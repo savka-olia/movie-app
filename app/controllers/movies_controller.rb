@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    # @movie.user = current_user
+    @movie.user = current_user
     if @movie.save
       flash[:notice] = "Movie was created successfully."
       redirect_to @movie
@@ -52,7 +52,7 @@ class MoviesController < ApplicationController
   end
 
   def ensure_admin
-    unless current_user.admin?
+    unless current_user.try(:admin?) 
       redirect_to(movies_path, alert: "You can't perfom this action")
     end
   end
