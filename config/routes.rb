@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "movies/index"  
   root to: "movies#index"
   resources :movies
+  resources :categories, except: [:destroy]
 end

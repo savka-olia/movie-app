@@ -2,7 +2,7 @@
 	<h1 class="logo">Movie App</h1>
     <ul class="main-nav">
       <li><%= link_to "Movies List", movies_path %></li>
-      <li><a href="#">About</a></li>
+      <li><%= link_to "Genres", categories_path %></li>
       <% if current_user && current_user.admin? %>
         <%= link_to "Create new Movie", new_movie_path %>
       <% end %>
