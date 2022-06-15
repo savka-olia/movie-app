@@ -8,6 +8,10 @@
       <div class="user-box">
         <%= f.text_area :description, rows: 9, placeholder: "Description of movie" %>
       </div>
+      <div class="user-box">
+        <%= f.collection_select(:category_ids, Category.all, :id, :name,
+        { prompt: "Make your selection from the list below"}, { multiple: true, size: 3, class: "custom-select shadow rounded" }) %>
+      </div>
       <div class="user-box form-group">
         <% if @movie.image.attached? %>
           <%= image_tag @movie.image, style:"width: 75px; display: block" %>

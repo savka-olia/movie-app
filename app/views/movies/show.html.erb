@@ -11,9 +11,9 @@
           <li>
             2003
           </li>
-          <li>
-            Action
-          </li>
+          <% if @movie.categories.any? %>
+            <%= render @movie.categories %>
+          <% end %>
         </ul>
       </div>
       <div class="card_right_review">

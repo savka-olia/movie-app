@@ -33,6 +33,6 @@ class CategoriesController < ApplicationController
     if !(current_user && current_user.admin?)
       flash[:alert] = "Only admins can perform that action"
       redirect_to categories_path
+    end
   end
-end
 end

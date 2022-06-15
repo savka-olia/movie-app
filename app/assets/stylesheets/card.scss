@@ -57,7 +57,7 @@ div h2 {
   color:#e3e3e3;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   padding: 0 40px 0 0;
 }
 
@@ -100,4 +100,14 @@ div h2 {
   transition-property: all;
   -webkit-transition-duration: .5s;
   transition-duration: .5s;
+}
+
+.card_right_details a {
+  text-decoration: none;
+  color: #e3e3e3;
+}
+
+.card_right_details a:hover {
+  text-decoration: none;
+  color: #016b70;
 }
