@@ -5,6 +5,7 @@
       <li><%= link_to "Genres", categories_path %></li>
       <% if current_user && current_user.admin? %>
         <%= link_to "Create new Movie", new_movie_path %>
+        <%= link_to "Create new Category", new_category_path %>
       <% end %>
       <% if current_user %>
         <li><%= link_to "Edit profile", edit_user_registration_path %></li>
